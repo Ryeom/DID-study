@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "ssikr/protos";
+
+package registrar;
+
+service Registrar {
+  rpc RegisterDid (RegistrarRequest) returns (RegistrarResponse) {
+  }
+}
+
+message RegistrarRequest {
+  string did = 1;
+  string didDocument = 2; // 파라미터에 들어갈 순서 go에서는 순서가 중요하다고 함
+}
+
+message RegistrarResponse {
+  string result = 1;
+}

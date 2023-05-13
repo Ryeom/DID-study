@@ -1,0 +1,18 @@
+// protos/did.proto.
+syntax = "proto3";
+
+option go_package = "ssikr/protos";
+
+package did;
+service SimpleDid {
+  rpc GetDid (Did) returns (Did) {}
+}
+
+message Did {
+  string id = 1;
+  string desc = 2;
+}
+
+
+// go get으로 다운받기
+
